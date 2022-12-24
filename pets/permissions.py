@@ -6,7 +6,6 @@ from pets_api import settings
 class APIKeyPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         api_key = request.headers.get('X-API_KEY')
-        print(request.headers.get('X-API_KEY'))
         if api_key == settings.API_KEY:
             return True
         else:
